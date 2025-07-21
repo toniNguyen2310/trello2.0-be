@@ -21,11 +21,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
-    "types": [
-      "node",
-      "express",
-      "mongoose"
-    ]
   },
   "include": [
     "src"
