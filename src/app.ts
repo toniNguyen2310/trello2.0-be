@@ -15,6 +15,9 @@ app.use(cors({
     origin: "http://localhost:5173", // Cho phép frontend
     credentials: true               // Cho phép gửi cookie/token
 }));
+app.get('/', (req, res) => {
+    res.send('Backend server is running ✅');
+});
 // Routes
 app.use('/api/auth', authRoutes)
 app.use('/api/boards', boardRoutes)
