@@ -29,17 +29,18 @@ app.use('/api/auth', authRoutes)
 app.use('/api/boards', boardRoutes)
 app.use('/api/columns', columnRoutes)
 app.use('/api/cards', cardRoutes)
-app.use('/api/users', userRoutes)
+app.use('/api/users', userRoutes);
 
-    // Start server after DB is connected
-    ; (async () => {
-        try {
-            await connectDB()
-            app.listen(PORT, () => {
-                console.log(`🚀 Server is running on port ${PORT}`)
-            })
-        } catch (error) {
-            console.error('❌ Failed to start server:', error)
-            process.exit(1)
-        }
-    })()
+// Start server after DB is connected
+(async () => {
+    try {
+        await connectDB()
+        app.listen(PORT, () => {
+            console.log(`🚀 Server is running on port ${PORT}`)
+        })
+    } catch (error) {
+        console.error('❌ Failed to start server:', error)
+        process.exit(1)
+    }
+})()
+export default app
