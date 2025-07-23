@@ -4,7 +4,6 @@ dotenv.config()
 import express from 'express'
 import cors from 'cors'
 import { connectDB } from './config/database'
-
 import authRoutes from './routes/auth.route'
 import boardRoutes from './routes/board.routes'
 import columnRoutes from './routes/column.routes'

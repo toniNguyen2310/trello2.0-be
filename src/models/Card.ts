@@ -8,6 +8,7 @@ export interface IChecklistItem {
 export interface ICard extends Document {
     id: string,
     columnId: string;
+    // boardId: string;
     title: string;
     description: string;
     checklist: IChecklistItem[]
@@ -25,6 +26,7 @@ const checklistItemSchema = new Schema<IChecklistItem>({
 const CardSchema: Schema<ICard> = new Schema({
     id: { type: String, required: true },
     columnId: { type: String, required: true },
+    // boardId: { type: String, required: true },
     title: { type: String, required: true },
     status: { type: Boolean, default: false },
     description: { type: String, default: '' },

@@ -15,20 +15,20 @@ router.get('/protected', verifyAccessToken, (req, res) => {
 // Giả sử có một route cần login mới truy cập được:
 
 //Board
-router.post('/', createBoard)
-router.get('/:userId', getBoardsByUser)
-router.delete('/:boardId', deleteBoard)
-router.put('/:boardId', updateBoardTitle)
+router.post('/', verifyAccessToken, createBoard)
+router.get('/:userId', verifyAccessToken, getBoardsByUser)
+router.delete('/:boardId', verifyAccessToken, deleteBoard)
+router.put('/:boardId', verifyAccessToken, updateBoardTitle)
 
 //Boards
-router.get('/:boardId/full', getBoardFullData)
+router.get('/:boardId/full', verifyAccessToken, getBoardFullData)
 
 //COLUMN
-router.put('/:boardId/column-order', updateColumnOrder)
+router.put('/:boardId/column-order', verifyAccessToken, updateColumnOrder)
 
 
 //BOARD SIGLE
-router.get('/single/:boardId', getSingleBoardById)
+router.get('/single/:boardId', verifyAccessToken, getSingleBoardById)
 
 
 

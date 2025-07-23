@@ -99,10 +99,13 @@ export const refreshAccessToken = (req: Request, res: Response) => {
 
         // Tạo access token mới
         const newAccessToken = generateAccessToken(decoded.userId)
-
+        const newRefreshToken = generateRefreshToken(decoded.userId)
         return res.json({
             message: 'Tạo access token mới thành công',
-            accessToken: newAccessToken
+            data: {
+                accessToken: newAccessToken,
+                refreshToken: newRefreshToken
+            }
         })
     } catch (error) {
         console.error('Lỗi khi refresh token:', error)

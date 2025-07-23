@@ -19,7 +19,6 @@ declare global {
 
 export const verifyAccessToken = (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization
-
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.status(401).json({ message: 'Không có token truy cập.' })
     }
